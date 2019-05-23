@@ -1,0 +1,16 @@
+{
+  "name": "preact-testing-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dom-testing-library": "^4.1.1"
+  }
+}
