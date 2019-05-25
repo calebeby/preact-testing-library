@@ -1,16 +1,38 @@
 {
-  "name": "preact-testing-library",
-  "version": "1.0.0",
+  "name": "@calebeby/preact-testing-library",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "build": "tsc",
-    "start": "tsc -w"
+    "start": "tsc -w",
+    "check-lint": "eslint --ignore-path .gitignore --ext .js,.ts . && prettier --list-different --ignore-path .gitignore '**/*.{j,t}s'",
+    "lint": "eslint --ignore-path .gitignore --fix --ext .js,.ts . && prettier --write --ignore-path .gitignore '**/*.{j,t}s'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:caleb/recommended"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": false
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "dom-testing-library": "^4.1.1"
+    "dom-testing-library": "4.1.1"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0-beta.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-caleb": "^4.0.0",
+    "preact": "^10.0.0-beta.1",
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5"
   }
 }
