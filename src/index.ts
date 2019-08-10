@@ -70,7 +70,7 @@ setPreactOptions()
 // @ts-ignore
 const fireEvent: FireFunction & FireObject = (...args) => dtlFireEvent(...args)
 
-Object.entries(dtlFireEvent as FireObject).forEach(
+Object.entries(dtlFireEvent).forEach(
   // @ts-ignore
   ([key, value]: [EventType, FireObject[EventType]]) => {
     fireEvent[key] = (...args) => {
