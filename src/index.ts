@@ -81,5 +81,19 @@ Object.entries(dtlFireEvent).forEach(
   },
 )
 
+declare global {
+  // eslint-disable-next-line no-implicit-globals
+  function afterEach(cb: () => void): void
+  const process: {
+    env: {
+      PTL_SKIP_AUTO_CLEANUP?: string
+    }
+  }
+}
+
+if (typeof afterEach === 'function' && !process.env.PTL_SKIP_AUTO_CLEANUP) {
+  afterEach(cleanup)
+}
+
 export * from '@testing-library/dom'
 export { render, cleanup, fireEvent }
