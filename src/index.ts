@@ -5,7 +5,7 @@ import {
   FireFunction,
   FireObject,
   EventType,
-} from 'dom-testing-library'
+} from '@testing-library/dom'
 import {
   render as preactRender,
   ComponentChild,
@@ -81,5 +81,5 @@ Object.entries(dtlFireEvent as FireObject).forEach(
   },
 )
 
-export * from 'dom-testing-library'
+export * from '@testing-library/dom'
 export { render, cleanup, fireEvent }
